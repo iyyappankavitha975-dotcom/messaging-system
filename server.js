@@ -1,12 +1,15 @@
-try {
-    var WebSocket = require('ws');
-} catch (error) {
-    console.error('WebSocket package not found. Please run "npm install" first.');
-    process.exit(1);
-}
-
+const WebSocket = require('ws');
 const PORT = process.env.PORT || 8080;
-const server = new WebSocket.Server({ port: PORT });
+
+const server = new WebSocket.Server({ 
+    port: PORT,
+    perMessageDeflate: false,
+    // Add CORS for your Netlify domain
+    verifyClient: (info) => {
+        const origin = info.origin || info.req.headers.origin;
+        return true; // In production, you might want to restrict this
+    }
+});
 
 const clients = new Map();
 

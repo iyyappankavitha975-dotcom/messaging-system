@@ -4,9 +4,13 @@
   "description": "Real-time chat application",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "echo 'No build required'"
   },
   "dependencies": {
     "ws": "^8.13.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
