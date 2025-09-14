@@ -70,7 +70,7 @@
             // Connect to WebSocket server
             const wsUrl = window.location.hostname === 'localhost' 
                 ? 'ws://localhost:8080' 
-                : 'wss://your-app-name.onrender.com'; // You'll replace this with your Render URL
+                : 'wss://messaging-system-redr.onrender.com';
             socket = new WebSocket(wsUrl);
             
             socket.onopen = () => {
