@@ -5,7 +5,8 @@ try {
     process.exit(1);
 }
 
-const server = new WebSocket.Server({ port: 8080 });
+const PORT = process.env.PORT || 8080;
+const server = new WebSocket.Server({ port: PORT });
 
 const clients = new Map();
 
@@ -82,4 +83,4 @@ function broadcast(message) {
     });
 }
 
-console.log('WebSocket server running on port 8080');
+console.log(`WebSocket server running on port ${PORT}`);

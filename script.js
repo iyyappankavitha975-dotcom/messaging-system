@@ -70,7 +70,7 @@
             // Connect to WebSocket server
             const wsUrl = window.location.hostname === 'localhost' 
                 ? 'ws://localhost:8080' 
-                : 'wss://your-websocket-server-url.herokuapp.com';
+                : 'wss://your-deployed-websocket-server.com'; // Replace with your actual WebSocket server URL
             socket = new WebSocket(wsUrl);
             
             socket.onopen = () => {
